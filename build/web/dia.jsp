@@ -4,6 +4,7 @@
     Author     : Pia
 --%>
 
+<%@page import="java.util.Date"%>
 <%@page import="Logica.Datoshabitacion"%>
 <%@page import="Logica.Cliente"%>
 <%@page import="Logica.Habitacion"%>
@@ -30,8 +31,8 @@
                               String usuz= (String) otrasession.getAttribute("usuario");
    
                              HttpSession misession=request.getSession();
-                             List<Habitacion> datox=(List<Habitacion>) request.getSession().getAttribute("arhivo");
-                        
+                             List<Habitacion> datoxx=(List<Habitacion>) request.getSession().getAttribute("arhivox");
+                             Date dechax =(Date) request.getSession().getAttribute("fecha");
                           
                               
                                
@@ -51,9 +52,10 @@
                              
                        </div>
                           </form>
-                          <%if(datox !=null ){ %>
+                          <%if(datoxx !=null ){ %>
                         <div class="row">
                             <div class="col s12">
+                             
                               <table>
                                   <thead>
                                   <th>id</th>
@@ -63,7 +65,7 @@
                                   <tbody>
                                 <%  
                                     
-                                   for (Habitacion log : datox) {
+                                   for (Habitacion log : datoxx) {
                                     long id= log.getId();    
                                       //controladora   
                                      Controladora control = new Controladora();

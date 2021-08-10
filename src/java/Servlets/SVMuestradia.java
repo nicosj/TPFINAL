@@ -93,10 +93,15 @@ public class SVMuestradia extends HttpServlet {
               } catch (ParseException ex) {
             Logger.getLogger(SVMuestradia.class.getName()).log(Level.SEVERE, null, ex);
               }
-            
+                
               List<Habitacion> lista=control.muestradia(dateuno);
-              HttpSession misession= request.getSession();
-             misession.setAttribute("arhivo", lista);
+             HttpSession misession= request.getSession();
+              if(lista!=null){
+              
+             misession.setAttribute("arhivox", lista);
+              }else{ misession.setAttribute("arhivox", null);}
+             misession.setAttribute("fecha",dateuno);
+             
              response.sendRedirect("dia.jsp");
     }
 

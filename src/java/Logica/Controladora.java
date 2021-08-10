@@ -3,6 +3,7 @@ package Logica;
 
 import Persistencia.ControladoraPersistencia;
 import Persistencia.exceptions.NonexistentEntityException;
+import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.List;
@@ -90,17 +91,21 @@ public class Controladora {
         return conPe.traertraerdatoshab();
     }
         public List <Habitacion> muestradia(Date dia){
+            
          List<Habitacion> fin =conPe.traerhabitacion();
+         List<Habitacion> otra= new ArrayList<Habitacion>();
+         int i=1;
                if(fin != null){
             for(Habitacion dato : fin){
-                    if(dato.getEntrada().equals(dia) ){
-                             fin.add(dato);
+                    if(dato.getEntrada().equals(dia)){
+                      otra.add(dato);
+                      
                     }
                 }
-                 return fin;
+                 return otra;
                }
             
-           return fin=null;
+           return otra;
     }   
       public List <Habitacion> buscaporid(long id){
          List<Habitacion> fin =conPe.traerhabitacion();
