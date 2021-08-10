@@ -3,10 +3,14 @@ package Logica;
 
 import Persistencia.ControladoraPersistencia;
 import Persistencia.exceptions.NonexistentEntityException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Controladora {
     
@@ -107,10 +111,16 @@ public class Controladora {
             
            return otra;
     }   
+       
+        
+        
+        
       public List <Habitacion> buscaporidemp(long id){
          List<Habitacion> fin =conPe.traerhabitacion();
          Login at=conPe.buscaremp(id);
           List<Habitacion> otra= new ArrayList<Habitacion>();
+         try{
+         
                if(fin != null){
             for(Habitacion dato : fin){
                     if(  at.getId()== dato.getEmpleado().getId()){
@@ -120,7 +130,10 @@ public class Controladora {
                  return otra;
                }
             
-           return otra=null;
+          
+         }catch(Exception e){
+            }
+          return otra=null;
     }
      
      //borra clientes
@@ -187,6 +200,36 @@ public class Controladora {
         }
         return false;
     }
+ public List<Habitacion>buscatres(int id, String desde, String hasta){
+               
+         List<Habitacion> fin =conPe.traerhabitacion();
+         Cliente e= conPe.buscarCliente(id);
+         List<Habitacion> otras= new ArrayList<Habitacion>();
+          try {   
+               SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd"); 
+            String fechaJSP = desde;
+            String fechados = hasta;
+            Date dateuno = new Date();
+            Date datedos = new Date();
+                    dateuno = formato.parse(fechaJSP);
+                     datedos = formato.parse(fechados);
+                      if(fin != null){
+                                for(Habitacion dato : fin){
+                                        if(dato.getCliente().getId()==e.getId()){
+                                            if(dato.getEntrada().after(dateuno) &&  dato.getSalida().before( datedos) ){
+                                                otras.add(dato);
 
+                                        }
+                                    }
+                                    
+                                   }
+            
+                      return otras;
+                      }
+                } catch (ParseException ex) {
+                    Logger.getLogger(Controladora.class.getName()).log(Level.SEVERE, null, ex);
+                }
+               return otras=null;
+        }
   
 }
