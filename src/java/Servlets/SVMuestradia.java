@@ -96,7 +96,7 @@ public class SVMuestradia extends HttpServlet {
             
               List<Habitacion> lista=control.muestradia(dateuno);
               HttpSession misession= request.getSession();
-             misession.setAttribute("lista", lista);
+             misession.setAttribute("arhivo", lista);
              response.sendRedirect("dia.jsp");
     }
 

@@ -93,14 +93,14 @@ public class Controladora {
          List<Habitacion> fin =conPe.traerhabitacion();
                if(fin != null){
             for(Habitacion dato : fin){
-                    if(dato.getRegistro().equals(dia) ){
+                    if(dato.getEntrada().equals(dia) ){
                              fin.add(dato);
                     }
                 }
                  return fin;
                }
             
-           return null;
+           return fin=null;
     }   
       public List <Habitacion> buscaporid(long id){
          List<Habitacion> fin =conPe.traerhabitacion();

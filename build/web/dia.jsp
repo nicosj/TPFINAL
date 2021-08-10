@@ -30,10 +30,9 @@
                               String usuz= (String) otrasession.getAttribute("usuario");
    
                              HttpSession misession=request.getSession();
-                             List<Habitacion> hab=(List<Habitacion>) request.getSession().getAttribute("lista");
+                             List<Habitacion> datox=(List<Habitacion>) request.getSession().getAttribute("arhivo");
                         
-                            //controladora   
-                            Controladora control = new Controladora();
+                          
                               
                                
                           %>
@@ -52,7 +51,7 @@
                              
                        </div>
                           </form>
-                          <%if(hab !=null ){ %>
+                          <%if(datox !=null ){ %>
                         <div class="row">
                             <div class="col s12">
                               <table>
@@ -60,16 +59,21 @@
                                   <tbody>
                                 <%  
                                     
-                                   for (Habitacion log : hab) {
+                                   for (Habitacion log : datox) {
                                     long id= log.getId();    
+                                      //controladora   
+                                     Controladora control = new Controladora();
                                      Cliente clie= control.buscaCliente(log.getCliente().getId());
                                       Datoshabitacion dah= control.buscahab(log.getDatoa().getId());
                                       
                                   %>
+                                  <tr>
                                   <td><%=id%></td>
                                   <td><%=clie.getName()%></td>
                                   <td><%=dah.getName()%></td>
+                                  </tr>
                                   <%}%>
+                                  
                                   </tbody>
                                   
                                       
@@ -77,7 +81,9 @@
                             </div>
                                   
                         </div>
-                         <%}%>
+                         <%}else{%>
+                         <h3>nada por mostrar</h1>
+                         <% }%>
                     </div>
            
             </div>
