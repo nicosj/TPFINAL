@@ -86,7 +86,7 @@ public class SVEmpleado extends HttpServlet {
     //pasa a logica
        Controladora control = new Controladora();
        control.crearLogin(dni,nombre, apellido, nacimiento,direccion,cargo,usuario,password);
-        response.sendRedirect("dos.jsp");
+        response.sendRedirect("empleado.jsp");
     }
 
     /**

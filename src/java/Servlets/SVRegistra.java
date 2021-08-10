@@ -121,7 +121,7 @@ public class SVRegistra extends HttpServlet {
     
 
        control.crearHabitacion(dah,log, cliente, dateuno, datedos,loco, total);
-        response.sendRedirect("dos.jsp");
+        response.sendRedirect("registro.jsp");
     }
 
     /**

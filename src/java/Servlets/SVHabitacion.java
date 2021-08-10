@@ -90,7 +90,7 @@ public class SVHabitacion extends HttpServlet {
     //pasa a logica
        Controladora control = new Controladora();
        control.crearDatoshabitacion(numero,piso,nombre,tipo,price);
-        response.sendRedirect("dos.jsp");
+        response.sendRedirect("habitacion.jsp");
     }
 
     /**
