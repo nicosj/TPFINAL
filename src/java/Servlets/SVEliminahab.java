@@ -6,8 +6,7 @@
 package Servlets;
 
 import Logica.Controladora;
-import Logica.Datoshabitacion;
-import Logica.Habitacion;
+import Persistencia.exceptions.NonexistentEntityException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -22,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Pia
  */
-@WebServlet(name = "SVHabitacion", urlPatterns = {"/SVHabitacion"})
-public class SVHabitacion extends HttpServlet {
+@WebServlet(name = "SVEliminahab", urlPatterns = {"/SVEliminahab"})
+public class SVEliminahab extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +41,10 @@ public class SVHabitacion extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SVHabitacion</title>");            
+            out.println("<title>Servlet SVEliminahab</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SVHabitacion at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SVEliminahab at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -76,45 +75,20 @@ public class SVHabitacion extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        int mod= Integer.parseInt(request.getParameter("muestra"));
-       
-        int numero= Integer.parseInt(request.getParameter("numero"));
-        int piso= Integer.parseInt(request.getParameter("piso"));
-        String nombre= request.getParameter("nombre");
-        String tipo= request.getParameter("tipo");
-        float price= Float.parseFloat(request.getParameter("price"));
-       
-          request.getSession().setAttribute("numero",numero);
-        request.getSession().setAttribute("piso",piso);
-        request.getSession().setAttribute("nombre",nombre);
-        request.getSession().setAttribute("tipo",tipo);
-        request.getSession().setAttribute("price",price);
-      
-    //pasa a logica
-       Controladora control = new Controladora();
-        if(mod != 0){
+            throws ServletException, IOException { 
+        
+        int id= Integer.parseInt(request.getParameter("id"));
             
-           Datoshabitacion cli = control.buscahab(numero);
-            cli.setId(numero);
-            cli.setName(nombre);
-            cli.setPiso(piso);
-            cli.setTipo(tipo);
-            cli.setPrice(price);
-          
-           try {
-                control.modificahabitacion(cli);
-            } catch (Exception ex) {
-                Logger.getLogger(SVHabitacion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            response.sendRedirect("habitacionedita.jsp");
-        }else{
-            
-       control.crearDatoshabitacion(numero,piso,nombre,tipo,price);
-        response.sendRedirect("habitacion.jsp");     
+        Controladora control = new Controladora();
+   
+        try {
+            control.borrarDatohab(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(SVEliminahab.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
+        
+        request.getSession().setAttribute("listahab", control.traerclientes());
+        response.sendRedirect("habitacion.jsp");
     }
 
     /**

@@ -33,12 +33,24 @@ public class ControladoraPersistencia {
              
              
     }
+      public void borrarDatohab(int id){
+           try {
+            dahJPA.destroy(id);
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+          
+      }
       
        
         public void modificapersona(Cliente cli) throws Exception{
                 cliJPA.edit(cli);
         }
-   
+        
+    public void modificahabitacion(Datoshabitacion cli) throws Exception{
+                dahJPA.edit(cli);
+        }
     public void crearDatoshabitacion(Datoshabitacion dat){
         try {
             dahJPA.create(dat);

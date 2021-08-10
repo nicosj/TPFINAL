@@ -55,6 +55,18 @@
                                         <td>
                                        <%= log.getPrice() %>
                                        </td>
+                                        <td>
+                                           <form name="borracliente" action="SVEliminahab" method="post">
+                                               <input type="hidden" name="id" value="<%=log.getId()%>">
+                                               <button type="submit" class="btn red btn-small">eliminar</button>     
+                                           </form>
+                                       </td>
+                                       <td>
+                                          <form name="editacliente" action="SVEditahab" method="post">
+                                               <input type="hidden" name="id" value="<%=log.getId()%>">
+                                               <button type="submit" class="btn btn-small">editar</button>     
+                                           </form>
+                                       </td>
                                        </tr>
                                   <% }
                                %>

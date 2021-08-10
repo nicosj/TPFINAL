@@ -127,6 +127,9 @@ public class Controladora {
     public void  borrarCliente(long id) throws NonexistentEntityException{
             conPe.borrarCliente(id);
     }
+    public void borrarDatohab(int id) throws NonexistentEntityException{
+            conPe.borrarDatohab(id);
+    }
     public Cliente  buscaCliente(long id){
             return conPe.buscarCliente(id);
     }
@@ -140,8 +143,10 @@ public class Controladora {
        public void modificapersona(Cliente cli) throws Exception{
             conPe.modificapersona(cli);
        }
-      
-
+    
+    public void   modificahabitacion(Datoshabitacion cli) throws Exception{
+            conPe.modificahabitacion(cli);
+       }
     
      public Cliente traerdni(String dni){
          List<Cliente> cli =conPe.traerclientes();
@@ -182,5 +187,6 @@ public class Controladora {
         }
         return false;
     }
-    
+
+  
 }

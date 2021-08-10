@@ -7,23 +7,21 @@ package Servlets;
 
 import Logica.Controladora;
 import Logica.Datoshabitacion;
-import Logica.Habitacion;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Pia
  */
-@WebServlet(name = "SVHabitacion", urlPatterns = {"/SVHabitacion"})
-public class SVHabitacion extends HttpServlet {
+@WebServlet(name = "SVEditahab", urlPatterns = {"/SVEditahab"})
+public class SVEditahab extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +40,10 @@ public class SVHabitacion extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SVHabitacion</title>");            
+            out.println("<title>Servlet SVEditahab</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SVHabitacion at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SVEditahab at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -77,44 +75,14 @@ public class SVHabitacion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int mod= Integer.parseInt(request.getParameter("muestra"));
-       
-        int numero= Integer.parseInt(request.getParameter("numero"));
-        int piso= Integer.parseInt(request.getParameter("piso"));
-        String nombre= request.getParameter("nombre");
-        String tipo= request.getParameter("tipo");
-        float price= Float.parseFloat(request.getParameter("price"));
-       
-          request.getSession().setAttribute("numero",numero);
-        request.getSession().setAttribute("piso",piso);
-        request.getSession().setAttribute("nombre",nombre);
-        request.getSession().setAttribute("tipo",tipo);
-        request.getSession().setAttribute("price",price);
-      
-    //pasa a logica
-       Controladora control = new Controladora();
-        if(mod != 0){
+          int id =Integer.parseInt(request.getParameter("id"));
+            Controladora control= new Controladora();
+            Datoshabitacion cliente=control.buscahab(id);
             
-           Datoshabitacion cli = control.buscahab(numero);
-            cli.setId(numero);
-            cli.setName(nombre);
-            cli.setPiso(piso);
-            cli.setTipo(tipo);
-            cli.setPrice(price);
-          
-           try {
-                control.modificahabitacion(cli);
-            } catch (Exception ex) {
-                Logger.getLogger(SVHabitacion.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            response.sendRedirect("habitacionedita.jsp");
-        }else{
-            
-       control.crearDatoshabitacion(numero,piso,nombre,tipo,price);
-        response.sendRedirect("habitacion.jsp");     
-        }
-       
+            HttpSession misession= request.getSession();
+            misession.setAttribute("habitacion", cliente);
+            misession.setAttribute("mohab","si");
+            response.sendRedirect("habitacion.jsp");
     }
 
     /**
