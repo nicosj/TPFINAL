@@ -11,17 +11,10 @@ body {
     vertical-align: middle;
     background: #4ECDC4;
 }
-/*
-#login-page {
-   width: 500px;
-}
 
-.card {
-     position: absolute;
-     left: 50%;
-     top: 50%;
-     transform: translate(-50%, -50%);
-}*/
+.ancho{
+    width:120px; 
+}
 
 
 footer {

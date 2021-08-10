@@ -22,7 +22,7 @@
          }
       
      %>
-     <nav>
+     <nav > 
  
    <ul id="dropdown1" class="dropdown-content">
   <li><a href="empleado.jsp">alta</a></li>
@@ -47,7 +47,7 @@
 </ul>
    
          <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Hotel California</a>
+
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
           
