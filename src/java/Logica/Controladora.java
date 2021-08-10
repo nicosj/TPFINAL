@@ -109,16 +109,18 @@ public class Controladora {
     }   
       public List <Habitacion> buscaporid(long id){
          List<Habitacion> fin =conPe.traerhabitacion();
+         Login at=conPe.buscaremp(id);
+          List<Habitacion> otra= new ArrayList<Habitacion>();
                if(fin != null){
             for(Habitacion dato : fin){
-                    if(dato.getEmpleado().equals(conPe.buscaremp(id)) ){
-                             fin.add(dato);
+                    if(  dato.getEmpleado().equals(at) ){
+                             otra.add(dato);
                     }
                 }
-                 return fin;
+                 return otra;
                }
             
-           return null;
+           return otra=null;
     }
      
      //borra clientes

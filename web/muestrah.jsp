@@ -4,6 +4,7 @@
     Author     : Pia
 --%>
 
+<%@page import="Logica.Habitacion"%>
 <%@page import="java.util.List"%>
 <%@page import="Logica.Cliente"%>
 <%@page import="Logica.Controladora"%>
@@ -28,7 +29,7 @@
                             
                         <table>
                             <thead>
-                            <th>id</th>
+                            <th>Habitacion</th>
                             <th>DNI</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
@@ -40,14 +41,17 @@
                                      //HttpSession misession=request.getSession();
                                      // List<Cliente> lista=(List) request.getSession().getAttribute("lista");
                                     Controladora control = new Controladora();
-                                        List<Cliente>     lista = control.traerclientes();
+                                        List<Habitacion>     lista = control.traerhabitacion();
                                   
                                 
-                               for (Cliente log : lista) {
-                                  long id= log.getId();    
-                                   String dni= log.getDni(); 
-                                   String name= log.getName();
-                                   String surname=log.getSurname();
+                               for (Habitacion log : lista) {
+                                  int id= log.getDatoa().getId();    
+                                  Cliente cli=control.buscaCliente( log.getCliente().getId());
+                                   String dni=cli.getDni();
+                                        String name=cli.getName();
+                                 String surname=cli.getSurname();
+                                   
+                                   
                                   %>
                                        <tr>  
                                            <td>
