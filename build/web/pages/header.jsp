@@ -47,7 +47,7 @@
 </ul>
    
          <div class="nav-wrapper">
-
+      <a href="registro.jsp" class="brand-logo "><i class="material-icons righ ">home</i> HOTEL CALIFORNIA</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
           
