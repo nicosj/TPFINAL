@@ -23,7 +23,7 @@
         <div class="cointainer">
             <div class="card z-depth-2">
             <div class="row center">
-                <h2>Alta Habitacion</h2>
+                <h4>Muestra habitaciones por empleado</h4>
                     <div class="col m12">
                     <% 
                               String usuz= (String) otrasession.getAttribute("usuario");

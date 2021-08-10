@@ -107,13 +107,13 @@ public class Controladora {
             
            return otra;
     }   
-      public List <Habitacion> buscaporid(long id){
+      public List <Habitacion> buscaporidemp(long id){
          List<Habitacion> fin =conPe.traerhabitacion();
          Login at=conPe.buscaremp(id);
           List<Habitacion> otra= new ArrayList<Habitacion>();
                if(fin != null){
             for(Habitacion dato : fin){
-                    if(  dato.getEmpleado().equals(at) ){
+                    if(  at.getId()== dato.getEmpleado().getId()){
                              otra.add(dato);
                     }
                 }

@@ -83,8 +83,8 @@ public class SVMuestraemp extends HttpServlet {
         
             Controladora control = new Controladora();
    
-              Login emp=control.buscaemp(idemp);
-              List<Habitacion> list= control.buscaporid(emp.getId());
+              
+              List<Habitacion> list= control.buscaporidemp(idemp);
               HttpSession misession= request.getSession();
              misession.setAttribute("chico", list);
              response.sendRedirect("muestraemp.jsp");
