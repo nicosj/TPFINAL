@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/habitacion.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/empleado.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Logica/Controladora.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Logica/Datoshabitacion.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Logica/Habitacion.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/registro.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/altaCliente.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Servlets/SVCliente.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/assets/css/style.css</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/assets/js/script.js</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/habitacionedita.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/Clienteedita.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/assets/js/materialize.js</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/pages/footer.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Servlets/SVUsuario.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Logica/Empleado.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Servlets/SVHabitacion.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/index.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Persistencia/DatoshabitacionJpaController.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/pages/header.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Persistencia/ControladoraPersistencia.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/login.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/web/empleadoedita.jsp</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Servlets/SvTest.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Servlets/SVEmpleado.java</file>
+            <file>file:/C:/Users/Pia/Documents/NetBeansProjects/Hotel/src/java/Servlets/SVRegistra.java</file>
+        </group>
+    </open-files>
+</project-private>
