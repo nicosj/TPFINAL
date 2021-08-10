@@ -55,7 +55,11 @@
                         <div class="row">
                             <div class="col s12">
                               <table>
-                                  <thead></thead>
+                                  <thead>
+                                  <th>id</th>
+                                  <th>apellido</th>
+                                  <th>nombre habitacion</th>
+                                  </thead>
                                   <tbody>
                                 <%  
                                     
